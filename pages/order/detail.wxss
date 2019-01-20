@@ -1,0 +1,116 @@
+/* pages/order/status.wxss */
+
+page {
+  background-color: #f1f1f1;
+}
+
+.box-status {
+  background: white;
+  margin-bottom: 30rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 250rpx;
+}
+
+.box-status .heading > .title {
+  font-size: 45rpx;
+  color: #666;
+}
+
+.box-status .heading > .description {
+  font-size: 30rpx;
+  color: #adadad;
+}
+
+.box-detail {
+  margin-bottom: 30rpx;
+}
+
+.box-detail .heading {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.box-detail .heading > .restaurant-name {
+  font-weight: bold;
+  font-size: 30rpx;
+}
+
+.box-detail .heading > .btn-comment {
+  border: 1px solid #fc663b;
+  color: #fc663b;
+  border-radius: 5rpx;
+  font-size: 30rpx;
+  padding: 10rpx 20rpx;
+}
+
+.food-list > .item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10rpx;
+}
+
+.food-list > .item > .title {
+  display: flex;
+  flex-direction: row;
+  width: 50%;
+}
+
+.food-list > .item > .title > .food {
+  color: #666;
+  font-size: 30rpx;
+  font-weight: 600;
+  padding-right: 10rpx;
+}
+
+.food-list > .item > .title > .specification {
+  color: #999;
+  font-size: 30rpx;
+  font-weight: normal;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.food-list > .item > .count {
+  flex-shrink: 0;
+  color: #999;
+  font-size: 30rpx;
+  padding: 0 50rpx;
+}
+
+.food-list > .item > .price {
+  flex-shrink: 0;
+  color: #666;
+  font-size: 30rpx;
+}
+
+.price-total {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  color: #666;
+  padding-bottom: 10rpx;
+  font-size: 30rpx;
+}
+
+.order-detail {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  color: #999;
+  padding-bottom: 10rpx;
+  font-size: 30rpx;
+}
+
+.order-detail > .key {
+  width: 150rpx;
+}

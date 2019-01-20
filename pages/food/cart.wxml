@@ -1,0 +1,52 @@
+<!--pages/food/cart.wxml-->
+<view class="container">
+  <view style="margin-bottom: 30rpx">
+    <i-cell-group>
+      <i-cell title="{{ restaurant_name }}" value="{{ desk ? (desk.name + ' (' + desk.desk_type.name + ')') : '未就座，点此扫码' }}" bind:click="scanDeskQRCode" is-link="{{ !desk }}"></i-cell>
+      <i-cell title="就餐人数" value="{{ customer_count ? (customer_count + '人') : '请选择' }}" bind:click="selectCustomerCount" is-link></i-cell>
+    </i-cell-group>
+  </view>
+  <view style="margin-bottom: 30rpx">
+    <i-cell-group>
+      <i-cell>
+        一共 {{ cart.items.length }} 份菜品
+      </i-cell>
+      <i-cell>
+        <view class="cart-list">
+          <view class="cart-item" wx:for="{{ cart.items }}" wx:key="specification_id">
+            <view class="food-cover">
+              <image src='{{ item.cover.url }}' style='width: 100rpx; height: 100rpx'></image>
+            </view>
+            <view class="food-brief">
+              <view class="food-name">{{ item.food_name }}</view>
+              <view>
+                <span class="food-count">X{{ item.count }}</span>
+                <span class="food-specification">{{ item.specification_name }}</span>
+              </view>
+            </view>
+            <view class="food-price">
+              ￥{{ item.total_priceS }}
+            </view>
+          </view>
+        </view>
+      </i-cell>
+      <i-cell class="cart-total-price">
+        共计
+        <span class="price">￥{{ cart.total_priceS }}</span>
+      </i-cell>
+    </i-cell-group>
+  </view>
+  
+  <view style="margin-bottom: 30rpx">
+    <i-cell-group>
+      <i-cell>
+        <i-input value="{{ remark }}" title="备注" placeholder="请输入口味等要求" maxlength="50" bind:change="onChangeRemark" />
+      </i-cell>
+    </i-cell-group>
+  </view>
+</view>
+
+<submit-order-bar total_priceS="{{ cart.total_priceS }}" catch:confirm="confirm" />
+<select-customer-count id="select-customer-count" show="{{ customer_count === 0 }}" catch:customer-count-update="onCustomerCountUpdate" />
+
+<i-toast id="toast" />

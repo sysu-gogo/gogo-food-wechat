@@ -1,0 +1,17 @@
+/* pages/order/index.wxss */
+
+page {
+  background-color: #f1f1f1;
+}
+
+.container {
+  margin: 40rpx 30rpx 60px 30rpx;
+}
+
+.no-order {
+  width: 100%;
+  text-align: center;
+  color: #666;
+  margin: 200rpx 0;
+  font-size: 40rpx;
+}

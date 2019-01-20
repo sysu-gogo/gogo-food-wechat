@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "历史订单",
+  "usingComponents": {
+    "nav-bar": "../../components/navbar/index"
+  },
+  "enablePullDownRefresh": true
+}

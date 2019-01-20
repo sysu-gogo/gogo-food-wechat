@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": "菜品搜索",
+  "usingComponents": {
+    "menu-list": "../../components/food/menu-list",
+    "cart-list": "../../components/cart/list",
+    "cart-bar": "../../components/cart/bar",
+    "cart-specification": "../../components/cart/specification",
+    "search-box": "../../components/food/search-box"
+  }
+}

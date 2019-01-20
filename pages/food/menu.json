@@ -1,0 +1,11 @@
+{
+  "navigationBarTitleText": "为食喵菜单",
+  "usingComponents": {
+    "menu-list": "../../components/food/menu-list",
+    "category-list": "../../components/food/category-list",
+    "cart-bar": "../../components/cart/bar",
+    "cart-list": "../../components/cart/list",
+    "cart-specification": "../../components/cart/specification",
+    "search-box": "../../components/food/search-box"
+  }
+}

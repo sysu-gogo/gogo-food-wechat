@@ -1,0 +1,46 @@
+/* pages/food/search.wxss */
+
+.wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+} 
+
+.header {
+  padding: 20rpx 30rpx;
+}
+
+.search {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+}
+
+.btn-clear {
+  height: 60rpx;
+  color: #c4c4c4;
+  padding: 0 10rpx;
+}
+
+.btn-cancel {
+  color: #fc663b;
+  padding-left: 30rpx;
+  font-size: 30rpx;
+  line-height: 60rpx;
+}
+
+.search-result {
+  background-color: #f1f1f1;
+  flex: 1;
+  padding-top: 20rpx;
+  padding-bottom: 128rpx;
+}

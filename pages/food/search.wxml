@@ -1,0 +1,31 @@
+<!--pages/food/search.wxml-->
+<view class="wrapper">
+  <view class="container">
+    <!-- 搜索框头部 -->
+    <view class="header">
+      <view class="search">
+        <search-box style="flex: 1">
+          <input value="{{ kw }}" focus='{{ focus }}' placeholder="请输入想找的菜品名" style='flex: 1' bindinput="doMiniSearch" bindconfirm="doSearch" />
+          <i-icon class="btn-clear" type="delete_fill" size="35" wx:if="{{ clearShowed }}" bindtap='clearKeywords' />
+        </search-box>
+        <view class="btn-cancel" bindtap='backPage'>取消</view>
+      </view>
+    </view>
+
+    <!-- 搜索结果 -->
+    <scroll-view class="search-result" scroll-y>
+      <i-cell-group wx:if="{{ mode === 'mini' }}">
+        <i-cell wx:for="{{ result }}" wx:key="food_id" small title="{{ item.name }}" data-name="{{ item.name }}" bind:click="fillAndSearch"></i-cell>
+      </i-cell-group>
+
+      <menu-list wx:if="{{ mode === 'full' }}" type="search" value="{{ result }}" catch:addToCart="onAddToCart"></menu-list>
+    </scroll-view>
+  </view>
+
+  <!-- 底层购物车 -->
+    <cart-list id="cart-list" wx:if="{{ cartShowed }}" catch:cart-hide="onCartHide" catch:cart-clean="onCartClean" catch:cart-update="onCartUpdate" />
+    <cart-bar id="cart-bar" bind:cart-toggle="toggleCart"/>
+    <cart-specification id="cart-specification" catch:cart-update="onCartUpdate" />
+
+    <i-toast id="toast" />
+</view>

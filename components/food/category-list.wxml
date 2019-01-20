@@ -1,0 +1,6 @@
+<!--components/food/category-list.wxml-->
+<view class="category">
+  <view wx:for="{{ category }}" wx:key="id" class="category-item {{ item.id === active_category ? 'active' : '' }}" data-category-id="{{ item.id }}" bindtap="scrollToCategory">
+    {{ item.name }}
+  </view>
+</view>

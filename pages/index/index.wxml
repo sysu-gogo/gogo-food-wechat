@@ -1,0 +1,46 @@
+<!--pages/index/index.wxml-->
+<view class="container">
+  <view class="ad">
+    <swiper indicator-dots="true" style="height: 480rpx">
+      <swiper-item>
+        <image src="https://ws3.sinaimg.cn/large/005BYqpggy1fzd0en20dsj30go0ciq39.jpg" class="slide-image" />
+      </swiper-item>
+    </swiper>
+  </view>
+  <view class="heading">
+    <view class="title">欢迎光临为食喵 (=^x^=)</view>
+    <view class="subtitle">无尽美食，尽在为食喵~</view>
+  </view>
+
+  <i-cell-group>
+    <i-cell is-link bind:click="toQueuePage">
+      <i-icon type="group" slot="icon" />
+      排队取号
+      <view slot="footer">线上取号，方便快捷</view>
+    </i-cell>
+    <i-cell is-link bind:click="scanQRCode">
+      <i-icon type="scan" slot="icon" />
+      扫码点餐
+      <view slot="footer">扫描桌上的二维码</view>
+    </i-cell>
+    <i-cell is-link bind:click="viewMenu">
+      <i-icon type="createtask" slot="icon" />
+      预先点餐
+      <view slot="footer">提前点菜，节省时间</view>
+    </i-cell>
+    <i-cell is-link bind:click="toOrderPage">
+      <i-icon type="time" slot="icon" />
+      历史订单
+    </i-cell>
+  </i-cell-group>
+
+</view>
+
+<nav-bar current="home" />
+
+<i-modal visible="{{ errmsg }}" bind:ok="retryLogin" show-cancel="{{ false }}">
+    <view>{{ errmsg }}</view>
+    <view>轻触确定重试</view>
+</i-modal>
+<i-toast id="toast" />
+<view class="mask" wx:if="{{ showMask }}"></view>

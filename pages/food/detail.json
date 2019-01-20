@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "菜品详情",
+  "usingComponents": {
+    "cart-list": "../../components/cart/list",
+    "cart-specification": "../../components/cart/specification",
+    "cart-bar": "../../components/cart/bar"
+    }
+}

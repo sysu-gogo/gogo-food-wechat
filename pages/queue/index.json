@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "排队",
+  "usingComponents": {
+    "nav-bar": "../../components/navbar/index"
+  }
+}

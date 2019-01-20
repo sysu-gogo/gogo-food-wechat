@@ -1,0 +1,36 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/food/menu",
+    "pages/food/cart",
+    "pages/food/search",
+    "pages/food/detail",
+    "pages/queue/index",
+    "pages/order/index",
+    "pages/order/comment",
+    "pages/order/detail"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "为食喵",
+    "navigationBarTextStyle": "black"
+  },
+  "usingComponents": {
+    "i-row": "components/iview/row/index",
+    "i-col": "components/iview/col/index",
+    "i-button": "components/iview/button/index",
+    "i-icon": "components/iview/icon/index",
+    "i-cell-group": "components/iview/cell-group/index",
+    "i-cell": "components/iview/cell/index",
+    "i-tab-bar": "components/iview/tab-bar/index",
+    "i-tab-bar-item": "components/iview/tab-bar-item/index",
+    "i-notice-bar": "components/iview/notice-bar/index",
+    "i-toast": "components/iview/toast/index",
+    "i-modal": "components/iview/modal/index",
+    "i-message": "components/iview/message/index",
+    "i-badge": "components/iview/badge/index",
+    "i-input": "components/iview/input/index",
+    "i-tag": "components/iview/tag/index"
+  }
+}

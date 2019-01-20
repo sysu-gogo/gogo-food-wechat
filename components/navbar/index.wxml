@@ -1,0 +1,8 @@
+<!--components/tabbar/index.wxml-->
+<view class="bar">
+  <i-tab-bar current="{{ current }}" bindchange="handleChange">
+  <i-tab-bar-item key="home" icon="homepage" current-icon="homepage_fill" title="主页"></i-tab-bar-item>
+  <i-tab-bar-item key="queue" icon="group" current-icon="group_fill" title="排队"></i-tab-bar-item>
+  <i-tab-bar-item key="order" icon="createtask" current-icon="createtask_fill" title="订单"></i-tab-bar-item>
+</i-tab-bar> 
+</view>

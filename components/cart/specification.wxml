@@ -1,0 +1,24 @@
+<!--components/cart/specification.wxml-->
+<view class='specification' wx:if="{{ show }}">
+  <view class='mask' bindtap="hide"></view>
+  <view class="content">
+    <!-- 头部 -->
+    <view class="heading">
+      <view class="title">{{ food.name }}</view>
+      <view class="btn-close" bindtap="hide">x</view>
+    </view>
+    <view class="subtitle">请选择规格</view>
+    <view class="list">
+      <view wx:for="{{ food.specifications }}" class="item {{ chosen.id === item.id ? 'active' : '' }}" wx:key="id" bindtap="choose" data-specification_id="{{ item.id }}">
+        {{ item.name }}
+      </view>
+    </view>
+    <view class="more">
+      <view class="more-price">¥{{ chosen.priceS }}</view>
+      <count-picker class="more-count" value="{{ count }}" max="{{ chosen.count }}" catch:count-change="onCountChange" />
+    </view>
+    <view class="btn-confirm" bindtap="addToCart">
+      确定
+    </view>
+  </view>
+</view>

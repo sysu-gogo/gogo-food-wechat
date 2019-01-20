@@ -1,0 +1,18 @@
+<!--components/cart/submit-order-bar.wxml-->
+<!-- 底层购物车 -->
+<view class="cart-bar">
+  <i-row>
+    <i-col span="16" i-class="col-class">
+      <view class="cart-left">
+        <view class="cart-pay-text">应付:</view>
+        <view class="cart-price">¥{{ total_priceS }}</view>
+      </view>
+    </i-col>
+
+    <i-col span="8" i-class="col-class">
+      <view class="cart-btn-submit" bindtap="confirm">
+        确认下单
+      </view>
+    </i-col>
+  </i-row>
+</view>

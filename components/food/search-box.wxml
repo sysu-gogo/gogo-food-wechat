@@ -1,0 +1,5 @@
+<!--components/food/search-box.wxml-->
+<view class="search-box">
+  <i-icon class="search-icon" type="search" size="35" />
+  <slot></slot>
+</view>

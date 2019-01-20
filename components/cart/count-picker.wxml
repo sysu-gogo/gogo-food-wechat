@@ -1,0 +1,10 @@
+<!--components/cart/count-picker.wxml-->
+<view class="count-picker">
+  <view class="btn-count-minus {{ count <= min ? 'disabled' : '' }}" bindtap='minusCount'>
+    -
+  </view>
+  <view class="more-count-text">{{ count }}</view>
+  <view class="btn-count-plus {{ count >= max ? 'disabled' : '' }}" bindtap='plusCount'>
+    +
+  </view>
+</view>

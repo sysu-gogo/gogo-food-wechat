@@ -1,0 +1,82 @@
+/* components/cart/list.wxss */
+.cart {
+  position: fixed;
+  bottom: 128rpx;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  z-index: 99;
+  display: flex;
+  flex-direction: column;
+}
+
+.mask {
+  flex: 1;
+  background-color: rgba(55,55,55,.6);
+}
+
+.content {
+  max-height: 70%;
+  background-color: white;
+  /*display: flex;
+  flex-direction: column;*/
+}
+
+.content > .header {
+  height: 70rpx;
+  background-color: #f4f4f4;
+  color: #a7a7a7;
+}
+.content > .cart-list {
+  /* BUG 太高的时候无法滚动 */
+  /*flex: 1;*/
+  height: 70%;
+}
+
+.cart-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  height: 120rpx;
+  border-bottom: #ebebeb 1rpx solid;
+  margin: 0 30rpx;
+}
+
+.cart-item > .cart-item-name {
+  flex: 1;
+  max-width: 50%;
+}
+
+.cart-item-food {
+  font-size: 35rpx;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.cart-item-specification {
+  color: #c4c4c4;
+  font-size: 27rpx;
+  
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.cart-item > .cart-item-price {
+  color: #fc663b;
+  flex-shrink: 0;
+}
+.cart-item > .cart-item-count {
+  width: 20%;
+  flex-shrink: 0;
+}
+
+.btn-clean {
+  line-height: 70rpx;
+  font-size: 30rpx;
+  float: right;
+  margin-right: 30rpx;
+}

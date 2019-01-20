@@ -1,0 +1,9 @@
+<!--pages/queue/index.wxml-->
+<view class="container">
+  <view class="no-queue">
+    <i-icon type="service_fill" size="40" />
+    无需排队，请直接就餐
+  </view>
+</view>
+
+<nav-bar current="queue" />

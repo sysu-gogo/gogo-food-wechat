@@ -1,0 +1,40 @@
+<!--pages/food/detail.wxml-->
+<view class="wrapper">
+  <view class="container">
+    <view class="header">
+      <swiper indicator-dots autoplay style="height: 480rpx">
+        <block wx:for="{{food.images}}" wx:key="url">
+          <swiper-item>
+            <image src="{{item.url}}" mode="aspectFill" class="slide-image" />
+          </swiper-item>
+        </block>
+      </swiper>
+      <view class="info-box">
+        <view class="food-name">{{ food.name }}</view>
+        <view class="footer">
+          <view class="price">{{ food.priceS ? ('￥' + food.priceS) : '暂无报价' }}
+            <span class="sub" wx:if="{{ food.specifications.length > 1 }}">起</span>
+          </view>
+          <view bindtap="addToCart" class="add-to-cart" wx:if="{{ food.available }}">+</view>
+          <view wx:else class="tips-sold-out">已售罄</view>
+        </view>
+      </view>
+    </view>
+    <view class="detail">
+      <view class="detail-heading">
+        <i-icon type="createtask" size="50" /> 菜品信息
+      </view>
+      <view class="card">
+        <view class="card-title">菜品描述</view>
+        <view class="card-content">{{ food.description }}</view>
+      </view>
+    </view>
+
+    <!-- 底层购物车 -->
+    <cart-list id="cart-list" wx:if="{{ cartShowed }}" catch:cart-hide="onCartHide" catch:cart-clean="onCartClean" catch:cart-update="onCartUpdate" />
+    <cart-bar id="cart-bar" bind:cart-toggle="toggleCart"/>
+    <cart-specification id="cart-specification" catch:cart-update="onCartUpdate" />
+
+    <i-toast id="toast" />
+  </view>
+</view>

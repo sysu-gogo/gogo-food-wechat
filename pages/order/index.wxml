@@ -1,0 +1,30 @@
+<!--pages/order/index.wxml-->
+<view class="container">
+  <view wx:if="{{ orders.length > 0}}">
+    <i-cell-group>
+      <i-cell wx:for="{{ orders }}" wx:key="id" data-id="{{ item.id }}" is-link bind:click="toDetailPage">
+        <view>
+          <i-tag wx:if="{{ item.status === 'not-paid' }}" type="border" color="red">
+            未支付
+          </i-tag>
+          <i-tag wx:if="{{ item.status === 'auditing' }}" type="border" color="blue">
+            审核中
+          </i-tag>
+          <i-tag wx:if="{{ item.status === 'finish' }}" type="border" color="green">
+            已完成
+          </i-tag>
+          <i-tag wx:if="{{ item.status === 'canceled' }}" type="border">
+            已取消
+          </i-tag>
+          {{ item.created_atS }}
+        </view>
+        <view slot="footer">消费: ￥{{ item.total_priceS }}</view>
+      </i-cell>
+    </i-cell-group>
+  </view>
+  <view wx:else class="no-order">
+    <i-icon type="emoji" size="40" /> 您没有来过就餐
+  </view>
+</view>
+
+<nav-bar current="order" />

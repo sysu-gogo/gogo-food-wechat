@@ -1,0 +1,17 @@
+<!--components/food/menu-list.wxml-->
+<scroll-view class="food-list" scroll-y scroll-top="{{ top }}" bindscroll="onScroll">
+  <!-- 依据分类导入菜单【菜单】 -->
+  <block wx:if="{{ type === 'category' }}" wx:for="{{ value }}" wx:key="category_id">
+    <!-- 菜单标题 -->
+    <view class="category-title" id="category-{{ item.category_id }}" data-category-id="{{ item.category_id }}">
+      {{ item.name }}
+    </view>
+
+    <menu-list-item class="food-item" wx:for="{{ item.food }}" wx:key="food_id" item="{{ item }}"></menu-list-item>
+  </block>
+
+  <!-- 依据菜式列表导入菜单【搜索】 -->
+  <view wx:if="{{ type === 'search' }}" class="result-full-search">
+    <menu-list-item  class="food-item" wx:for="{{ value }}" wx:key="food_id" item="{{ item }}"></menu-list-item>
+  </view>
+</scroll-view>

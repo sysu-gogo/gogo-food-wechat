@@ -1,0 +1,57 @@
+/* pages/food/cart.wxss */
+page {
+  background-color: #f1f1f1;
+}
+
+.container {
+  padding: 20rpx 20rpx 128rpx;
+}
+
+.cart-list {
+
+}
+
+.cart-list > .cart-item {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 10rpx;
+}
+
+.cart-list > .cart-item > .food-cover {
+  flex-shrink: 0;
+  padding-right: 20rpx;
+}
+
+.cart-list > .cart-item > .food-brief {
+  flex: 1;
+}
+
+.cart-list > .cart-item > .food-brief .food-name {
+  font-size: 35rpx;
+}
+
+.cart-list > .cart-item > .food-brief .food-count {
+  font-size: 28rpx;
+  color: #666;
+  padding-right: 25rpx;
+}
+
+.cart-list > .cart-item > .food-brief .food-specification {
+  font-size: 30rpx;
+  color: #929292;
+}
+
+.cart-list > .cart-item > .food-price {
+  font-size: 35rpx;
+}
+
+.cart-total-price {
+  text-align: right;
+  color: #929292;
+  font-size: 30rpx;
+}
+
+.cart-total-price .price {
+  font-size: 35rpx;
+  color: #000;
+}

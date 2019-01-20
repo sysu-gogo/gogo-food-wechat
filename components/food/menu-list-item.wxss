@@ -1,0 +1,78 @@
+/* components/food/menu-list-item.wxss */
+/* 菜品清单 - 菜品列表 */
+.cover {
+  float: left;
+  position: relative;
+  width: 200rpx;
+  height: 200rpx;
+  background-color: #eeeeee;
+  border-radius: 10rpx;
+}
+
+.info {
+  margin-left: 220rpx;
+  height: 200rpx;
+  display: flex;
+  flex-direction: column;
+}
+
+.info > .title {
+  font-weight: bold;
+  font-size: 30rpx;
+
+  display: -webkit-box;
+  line-height: 30rpx;
+  word-break: break-all;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  margin-bottom: 10rpx;
+}
+
+.info > .brief {
+  font-size: 25rpx;
+  height: 60rpx;
+  color: #c4c4c4;
+
+  display: -webkit-box;
+  line-height: 30rpx;
+  word-break: break-all;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.info > .footer {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.info > .footer > .price {
+  color: #fc663b;
+  font-size: 35rpx;
+  font-weight: bold;
+}
+
+.info > .footer > .price > .sub {
+  font-size: 25rpx;
+}
+
+.info > .footer > .add-to-cart {
+  background-color: #fc663b;
+  width: 40rpx;
+  height: 40rpx;
+  border-radius: 40rpx;
+  color: white;
+  line-height: 40rpx;
+  text-align: center;
+}
+
+.info > .footer > .add-to-cart.disable {
+  background-color: #c4c4c4;
+}

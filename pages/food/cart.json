@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "select-customer-count": "../../components/cart/modal/select-customer-count",
+    "submit-order-bar": "../../components/cart/submit-order-bar"
+  }
+}

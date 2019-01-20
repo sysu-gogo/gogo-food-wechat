@@ -1,0 +1,44 @@
+/* components/cart/count-picker.wxss */
+.count-picker {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.btn-count-minus {
+  border: #fc663b 1rpx solid;
+  color: #fc663b;
+  width: 40rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+  font-size: 40rpx;
+  border-radius: 40rpx;
+  text-align: center;
+}
+
+.btn-count-minus.disabled {
+  border-color: #cbcbcb;
+  color: #cbcbcb;
+}
+
+.more-count-text {
+  text-align: center;
+}
+
+.btn-count-plus {
+  color: white;
+  border: #fc663b 1rpx solid;
+  background-color: #fc663b;
+  width: 40rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+  font-size: 40rpx;
+  border-radius: 40rpx;
+  text-align: center;
+}
+
+.btn-count-plus.disabled {
+  border-color: #cbcbcb;
+  background-color: #cbcbcb;
+}

@@ -1,0 +1,8 @@
+/* pages/queue/index.wxss */
+.no-queue {
+  width: 100%;
+  text-align: center;
+  color: #666;
+  margin: 200rpx 0;
+  font-size: 40rpx;
+}

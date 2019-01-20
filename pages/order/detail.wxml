@@ -1,0 +1,90 @@
+<!--pages/order/status.wxml-->
+<view class="container">
+  <view class="box-status">
+    <block wx:if="{{ order.status === 'auditing' }}">
+      <view class="icon" style='color: #666'>
+        <i-icon type="emoji" size="100" />
+      </view>
+      <view class="heading">
+        <view class="title">商家正在接单</view>
+        <view class="description">请等待商家审核，一般在一分钟内完成</view>
+      </view>
+    </block>
+    <block wx:elif="{{ order.status === 'finish' }}">
+      <view class="icon" style='color: #5ebd7d'>
+        <i-icon type="success" size="100" />
+      </view>
+      <view class="heading">
+        <view class="title">订单已完成</view>
+        <view class="description">商家已结单，请等待服务员上菜</view>
+      </view>
+    </block>
+    <block wx:else>
+      <view class="icon" style='color: #666'>
+        <i-icon type="more" size="100" />
+      </view>
+      <view class="heading">
+        <view class="title">数据正在更新</view>
+        <view class="description">稍后将更新订单的状态</view>
+      </view>
+    </block>
+  </view>
+
+  <view class="box-detail">
+    <i-cell-group>
+      <i-cell>
+        <view class="heading">
+          <view class="restaurant-name">{{ restaurant_name }}</view>
+          <!-- <view class="btn-comment">写评价</view> -->
+        </view>
+      </i-cell>
+      <i-cell>
+        <view class="food-list">
+          <view class="item" wx:for="{{ order.items }}" wx:key="id">
+            <view class="title">
+              <view class="food">{{ item.specification.food.name }}</view>
+              <view class="specification">{{ item.specification.name }}</view>
+            </view>
+            <view class="count">
+              x{{ item.count }}
+            </view>
+            <view class="price">
+              ￥ {{ item.priceS }}
+            </view>
+          </view>
+        </view>
+      </i-cell>
+      <i-cell>
+        <view class="price-total">
+          <view>消费金额</view>
+          <view>￥ {{ order.total_priceS }}</view>
+        </view>
+        <view class="price-total">
+          <view>用户实付</view>
+          <view>￥ {{ order.paid_priceS }}</view>
+        </view>
+      </i-cell>
+
+      <i-cell>
+        <view class="order-detail">
+          <view class="key">桌位号:</view>
+          <view>{{ order.desk ? (order.desk.name + ' (' + order.desk.desk_type.name + ')') : '' }}</view>
+        </view>
+        <view class="order-detail">
+          <view class="key">订单编号:</view>
+          <view>{{ order.order_no }}</view>
+        </view>
+        <view class="order-detail">
+          <view class="key">下单时间:</view>
+          <view>{{ order.created_atS }}</view>
+        </view>
+        <view class="order-detail" wx:if="{{ order.status === 'finish' || order.status === 'canceled' }}">
+          <view class="key">{{ order.status === 'finish' ? '接单' : '取消' }}时间:</view>
+          <view>{{ order.finish_atS }}</view>
+        </view>
+      </i-cell>
+    </i-cell-group>
+  </view>
+
+  <view style='text-align: center; color: #c4c4c4; font-size: 25rpx;'>点餐修改、退款等事宜请联系店家</view>
+</view>

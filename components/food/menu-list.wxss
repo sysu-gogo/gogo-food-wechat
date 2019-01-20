@@ -1,0 +1,19 @@
+/* components/food/menu-list.wxss */
+/* 菜品清单 */
+.food-list {
+  height: 100%;
+  width: 100%;
+}
+
+/* 菜品清单 - 分类标题 */
+.food-list .category-title {
+  font-size: 30rpx;
+  font-weight: normal;
+  margin: 20rpx 0;
+}
+
+.result-full-search {
+  margin: 20rpx 0;
+  padding: 20rpx 20rpx;
+  background-color: white;
+}

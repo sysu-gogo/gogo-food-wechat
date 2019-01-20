@@ -1,0 +1,17 @@
+/* components/food/category-list.wxss */
+.category {
+  width: 200rpx;
+  height: 100%;
+  overflow-y: scroll;
+  word-wrap: break-word;
+  background-color: #f3f3f3;
+}
+
+.category > .category-item {
+  padding: 30rpx 10rpx 30rpx 30rpx;
+}
+
+.category > .category-item.active {
+  background-color: white;
+  font-weight: bold;
+}

@@ -1,0 +1,19 @@
+<!--components/food/menu-list-item.wxml-->
+<view style="margin-bottom: 20rpx;">
+  <image class="cover" mode="aspectFill" src="{{ item.cover.url }}" bindtap="toDetailPage">
+  </image>
+  <view class="info">
+    <view class="title" bindtap="toDetailPage">
+      {{ item.name }}
+    </view>
+    <view class="brief" bindtap="toDetailPage">
+      {{ item.brief }}
+    </view>
+    <view class="footer">
+      <view class="price">{{ item.priceS ? ('￥' + item.priceS) : '暂无报价' }}
+        <span class="sub" wx:if="{{ item.specifications.length > 1 }}">起</span>
+      </view>
+      <view bindtap="addToCart" class="add-to-cart {{ item.available ? '' : 'disable' }}">+</view>
+    </view>
+  </view>
+</view>

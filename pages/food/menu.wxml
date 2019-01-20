@@ -1,0 +1,30 @@
+<!--index.wxml-->
+<view class="wrapper">
+  <view class="container">
+
+    <!-- 菜单核心 -->
+    <view class="menu-header">
+      <view class="tag">
+        <span class="desk">
+          <i-icon type="task_fill" size="30" /> {{ desk ? (desk.name + ' (' + desk.desk_type.name + ')') : '预订单' }}
+        </span>
+      </view>
+      <search-box bindtap='toSearchPage'>
+        <span>请输入想找的菜品名</span>
+      </search-box>
+    </view>
+    <view class="food-menu">
+      <!-- 分类列表 -->
+      <category-list category="{{ category }}" active_category="{{ active_category }}" bind:scrollFoodListToCategory="onScrollFoodListToCategory" />
+      <!-- 菜品列表 -->
+      <menu-list class="list" type="category" value="{{ category }}" current_category="{{ to_category }}" catch:addToCart="onAddToCart" catch:categoryLocByScroll="onCategoryLocByScroll" />
+    </view>
+
+    <!-- 底层购物车 -->
+    <cart-list id="cart-list" wx:if="{{ cartShowed }}" catch:cart-hide="onCartHide" catch:cart-clean="onCartClean" catch:cart-update="onCartUpdate" />
+    <cart-bar id="cart-bar" bind:cart-toggle="toggleCart"/>
+    <cart-specification id="cart-specification" catch:cart-update="onCartUpdate" />
+
+    <i-toast id="toast" />
+  </view>
+</view>

@@ -1,0 +1,38 @@
+<!--components/cart/bar.wxml-->
+<!-- 底层购物车 -->
+<view class="cart-bar">
+  <i-row>
+    <i-col span="16" i-class="col-class">
+      <!-- 左侧信息 -->
+      <view class="cart-brief">
+        <!-- 购物车图标 -->
+        <view class="cart-count" wx:if="{{items.length === 0}}">
+          <i-icon type="publishgoods_fill" size="80" />
+        </view>
+        <view class="cart-count" bindtap="showCartList" wx:else>
+          <i-badge count="{{ items.length }}">
+            <i-icon type="publishgoods_fill" size="80" />
+          </i-badge>
+        </view>
+
+        <!-- 总金额 -->
+        <view class="cart-price cart-no-price" wx:if="{{items.length === 0}}">
+          还未点餐
+        </view>
+        <view class="cart-price" wx:else>
+          ¥{{ priceS }}
+        </view>
+      </view>
+    </i-col>
+
+    <i-col span="8" i-class="col-class">
+      <!-- 购物车下单 -->
+      <view class="cart-no-choice" wx:if="{{items.length === 0}}">
+        请先点餐
+      </view>
+      <view class="cart-btn-submit" bindtap="toCartPage" wx:else>
+        选好了
+      </view>
+    </i-col>
+  </i-row>
+</view>
