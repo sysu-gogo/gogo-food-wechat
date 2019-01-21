@@ -59,7 +59,7 @@ page {
 .food-list > .item > .title {
   display: flex;
   flex-direction: row;
-  width: 50%;
+  width: 60%;
 }
 
 .food-list > .item > .title > .food {
@@ -67,6 +67,10 @@ page {
   font-size: 30rpx;
   font-weight: 600;
   padding-right: 10rpx;
+  
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .food-list > .item > .title > .specification {
@@ -80,16 +84,18 @@ page {
 }
 
 .food-list > .item > .count {
-  flex-shrink: 0;
   color: #999;
   font-size: 30rpx;
-  padding: 0 50rpx;
+  padding: 0 20rpx;
+  text-align: left;
+  width: 20%;
 }
 
 .food-list > .item > .price {
-  flex-shrink: 0;
   color: #666;
   font-size: 30rpx;
+  text-align: right;
+  width: 20%;
 }
 
 .price-total {
