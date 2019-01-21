@@ -48,7 +48,6 @@ Page({
     wx.login({
       success: res => {
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
-        console.log(res.code);
         this.doGetToken(res.code);
       }
     });
@@ -57,7 +56,6 @@ Page({
   doGetToken(code) {
     const $this = this;
     Auth.getToken(code).then(function (res) {
-      console.log(res);
       app.globalData.token = res.token;
 
       $this.setData({
@@ -65,7 +63,6 @@ Page({
       });
       $Toast.hide();
     }).catch(function (e) {
-      console.error(e);
       $this.setData({
         errmsg: e.message
       });
