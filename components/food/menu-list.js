@@ -49,10 +49,10 @@ Component({
         const category = this.data.value;
         const top = e.detail.scrollTop + category[0].rectTop;
         const len = category.length;
-        for (var i = 0; i < len - 1; i++) {
+        for (var i = 0; i < len; i++) {
           // 找到了正确的分类位置
           // 前提：分类数组已经排好序了
-          if (top >= category[i].rectTop && top < category[i + 1].rectTop) {
+          if (top >= category[i].rectTop && (i + 1 === len || top < category[i + 1].rectTop)) {
             // category[i] 就是当前的分类了
             if (this.data.active_category !== category[i].id) {
               // 通知外层的分类列表组件

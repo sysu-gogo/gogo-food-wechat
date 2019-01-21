@@ -1,9 +1,9 @@
 <!--components/food/menu-list.wxml-->
 <scroll-view class="food-list" scroll-y scroll-top="{{ top }}" bindscroll="onScroll">
   <!-- 依据分类导入菜单【菜单】 -->
-  <block wx:if="{{ type === 'category' }}" wx:for="{{ value }}" wx:key="category_id">
+  <block wx:if="{{ type === 'category' }}" wx:for="{{ value }}" wx:key="id">
     <!-- 菜单标题 -->
-    <view class="category-title" id="category-{{ item.category_id }}" data-category-id="{{ item.category_id }}">
+    <view class="category-title" id="category-{{ item.id }}" data-category-id="{{ item.id }}">
       {{ item.name }}
     </view>
 

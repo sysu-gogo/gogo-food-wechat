@@ -30,14 +30,9 @@ Component({
      */
     scrollToCategory: function(e) {
       const cid = e.currentTarget.dataset.categoryId;
-      this.setData({
-        active_category: cid
-      })
       this.triggerEvent('scrollFoodListToCategory', {
         category_id: cid
-      }, {
-        bubbles: true
-      })
+      }, {})
     }
   }
 })
