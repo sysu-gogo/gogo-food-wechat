@@ -1,0 +1,27 @@
+<!--components/queue/select-desk.wxml-->
+<view class='model' wx:if="{{ visible }}">
+  <view class='mask' bindtap="hideModel"></view>
+  <view class="content">
+    <i-cell-group>
+      <i-cell>
+        <view class="title">
+          选择需要取号的桌子类型
+        </view>
+      </i-cell>
+      <i-cell wx:for="{{ deskTypes }}" wx:if="{{ item.need_queue }}" wx:key="id" data-id="{{ item.id }}" is-link bindtap="askConfirm">
+        {{ item.name }}
+        <view slot="footer">
+          {{ item.description }}
+        </view>
+      </i-cell>
+      <i-cell is-link bindtap="hideModel">
+        我再想想
+      </i-cell>
+    </i-cell-group>
+  </view>
+</view>
+
+<i-toast id="toast" />
+<i-modal visible="{{ showConfirmModel }}" actions="{{ confirmModelActions }}" bind:click="doQueue">
+  您确认取号排队"{{ selectedDesk.name }}"？
+</i-modal>

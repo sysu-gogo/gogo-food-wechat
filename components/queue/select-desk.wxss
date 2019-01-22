@@ -1,0 +1,28 @@
+/* components/queue/select-desk.wxss */
+.model {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  z-index: 200;
+  display: flex;
+  flex-direction: column;
+}
+
+.mask {
+  flex: 1;
+  background-color: rgba(55,55,55,.6);
+}
+
+.content {
+  max-height: 70%;
+  background-color: white;
+  /*display: flex;
+  flex-direction: column;*/
+}
+
+.title {
+  color: #666
+}
+

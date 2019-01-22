@@ -1,6 +1,9 @@
 {
   "navigationBarTitleText": "排队",
+  "navigationBarBackgroundColor": "#f1f1f1",
   "usingComponents": {
-    "nav-bar": "../../components/navbar/index"
+    "nav-bar": "../../components/navbar/index",
+    "select-desk": "../../components/queue/select-desk",
+    "i-card": "../../components/iview/card/index"
   }
 }

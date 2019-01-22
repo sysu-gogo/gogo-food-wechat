@@ -1,9 +1,56 @@
 <!--pages/queue/index.wxml-->
 <view class="container">
-  <view class="no-queue">
-    <i-icon type="service_fill" size="40" />
-    无需排队，请直接就餐
+  <view wx:if="{{ needQueue }}">
+    <view style="margin-bottom: 30rpx">
+      <i-card title="餐厅排队情况">
+        <view slot="content">
+          <i-cell-group>
+            <i-cell wx:for="{{ deskTypes }}" wx:key="id">
+              {{ item.name }}
+              <view slot="footer">
+                {{ (!item.need_queue || item.count === 0) ? '无需排队' : (item.need_queue + '桌等待，下一号为 ' + item.next_num) }}
+              </view>
+            </i-cell>
+          </i-cell-group>
+        </view>
+      </i-card>
+    </view>
+
+    <view wx:if="{{ myStatus }}" style="margin-bottom: 20rpx">
+      <i-card title="我的排队" footer>
+        <view slot="content">
+          <i-cell-group>
+            <i-cell>
+              我的号码是 {{ myStatus.desk_type.name }} {{ myStatus.number }}号
+              <view slot="footer">
+                {{ myStatus.status === 'waiting' ? '等待中' : '已过号' }}
+              </view>
+            </i-cell>
+          </i-cell-group>
+          <i-cell-group>
+            <i-cell>
+              当前前面还有 {{ myStatus.prev_count }} 号
+            </i-cell>
+          </i-cell-group>
+        </view>
+        <view slot="footer">过号作废，请注意提早到达餐厅</view>
+      </i-card>
+      <view>
+        <view class="btn-cancel" bindtap="askCancel">取消取号</view>
+      </view>
+    </view>
+    <view wx:else>
+      <view class="btn-queue" bindtap="askPickQueue">在线取号</view>
+    </view>
+  </view>
+  <view wx:else class="no-queue">
+    <i-icon type="service_fill" size="40" /> 无需排队，请直接就餐
   </view>
 </view>
 
 <nav-bar current="queue" />
+
+<i-toast id="toast" />
+<i-modal visible="{{ showCancelModel }}" title="您是否要取消本次取号？" actions="{{ cancelModelActions }}" bind:click="doCancel"></i-modal>
+
+<select-desk visible="{{ showSelectDesk }}" deskTypes="{{ deskTypes }}" catch:queue-success="onQueueSuccess" />

@@ -13,6 +13,8 @@ const getMyInfo = function () {
       success({ data, statusCode }) {
         if (statusCode === 200) {
           resolve(data)
+        } else if (statusCode === 204) {
+          resolve(null)
         } else if (statusCode === 500) {
           reject(new Error(data.message || '未知错误'))
         } else {
@@ -79,14 +81,14 @@ const create = function (desk_type_id) {
   })
 }
 
-const cancel = function (desk_type_id) {
+const cancel = function () {
   return new Promise(function (resolve, reject) {
     wx.request({
-      url: util.getUrl('/queue'),
+      url: util.getUrl('/queue/cancel'),
       header: {
         'X-Access-Token': app.globalData.token
       },
-      method: 'DELETE',
+      method: 'PUT',
       dataType: 'json',
       success({ data, statusCode }) {
         if (statusCode === 200) {
